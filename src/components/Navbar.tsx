@@ -4,10 +4,13 @@ import { useState } from "react";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "../context/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,29 +39,30 @@ const Navbar = () => {
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                Track Health
+                {t("navbar.trackHealth")}
               </Link>
               <Link
                 href="/community"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                Community
+                {t("navbar.community")}
               </Link>
               <Link
                 href="/rewards"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                Rewards
+                {t("navbar.rewards")}
               </Link>
               <Link
                 href="/profile"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                Profile
+                {t("navbar.profile")}
               </Link>
+              <LanguageSelector />
             </div>
           </div>
 

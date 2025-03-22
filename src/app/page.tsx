@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
             >
               GraMed
             </h1>
+
             <p
               className="mt-2 text-center text-lg text-gray-600"
               style={{ fontFamily: "Roboto, sans-serif" }}
