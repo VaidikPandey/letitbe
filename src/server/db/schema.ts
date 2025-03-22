@@ -6,8 +6,10 @@ import {
   index,
   integer,
   pgTableCreator,
+  pgTable,
   timestamp,
   varchar,
+  real,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -18,13 +20,24 @@ import {
  */
 export const createTable = pgTableCreator((name) => `letitbe_${name}`);
 
-export const users = createTable("user", {
+export const users = pgTable("user", {
   id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
   name: varchar("name", { length: 256 }),
-  createdAt: timestamp("created_at", { withTimezone: true })
-    .default(sql`CURRENT_TIMESTAMP`)
-    .notNull(),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-    () => new Date(),
+  bloodPressureLow: integer("blood_pressure_low").default(0),
+  bloodPressureHigh: integer("blood_pressure_high").default(0),
+  bloodSugar: real("blood_sugar").default(0),
+  height: real("height").default(0),
+  weight: real("weight").default(0),
+  emergency_number: varchar("emergency_number", { length: 15 }).default(
+    "+918318616613",
   ),
+  dateOfBirth: timestamp("date_of_birth"),
+  oxygenLevel: integer("oxygen_level").default(0),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
+  nextReminder: timestamp("next_reminder").$onUpdate(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 7);
+    return date;
+  }),
 });

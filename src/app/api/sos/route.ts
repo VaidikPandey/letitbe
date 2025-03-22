@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { NextResponse } from "next/server";
 import twilio from "twilio";
-//import { db } from "../../server/db";
-//import { users } from "../../server/schema";
+import { db } from "@/server/db";
+import { users } from "@/server/db/schema";
 
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
