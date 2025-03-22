@@ -7,6 +7,26 @@ import * as Dialog from "@radix-ui/react-dialog";
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
+  const handleSOS = async () => {
+    if (confirm("Send SOS call to emergency contact?")) {
+      const contacts = ["+918318616613"]; // Hardcoded for speed; fetch from DB later
+      try {
+        const response = await fetch("/api/sos", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId: "test-user", contacts }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          alert("SOS call initiated!");
+        } else {
+          alert("Failed to send SOS call. Please try again.");
+        }
+      } catch (error) {
+        alert("Error sending SOS call.");
+      }
+    }
+  };
 
   const handleSOSClick = async () => {
     setIsLoading(true);
@@ -140,7 +160,7 @@ export default function HomePage() {
 
                     <button
                       className="rounded-full bg-blue-500 px-5 py-3 font-medium text-white transition-colors hover:bg-blue-600"
-                      onClick={handleSOSClick}
+                      onClick={handleSOS}
                     >
                       Send SOS Alert
                     </button>

@@ -13,9 +13,9 @@ export async function POST(request: Request) {
 
   try {
     // Fetch user (optional, for validation)
-    const user = await db.select().from(users).where({ id: userId }).get();
-    if (!user)
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    // const user = await db.select().from(users).where({ id: userId }).get();
+    //if (!user)
+    //return NextResponse.json({ error: "User not found" }, { status: 404 });
 
     // Make SOS call
     for (const contact of contacts) {
