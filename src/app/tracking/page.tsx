@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
