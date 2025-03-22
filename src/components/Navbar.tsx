@@ -39,35 +39,27 @@ const Navbar = () => {
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                {t("navbar.trackHealth")}
-              </Link>
-              <Link
-                href="/community"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
-                style={{ fontFamily: "Roboto, sans-serif" }}
-              >
-                {t("navbar.community")}
+                Track Health
               </Link>
               <Link
                 href="/rewards"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                {t("navbar.rewards")}
+                Rewards
               </Link>
               <Link
                 href="/profile"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#3B82F6]"
                 style={{ fontFamily: "Roboto, sans-serif" }}
               >
-                {t("navbar.profile")}
+                Profile
               </Link>
               <LanguageSelector />
             </div>
           </div>
 
           {/* Auth buttons - desktop */}
-
           <div className="hidden space-x-2 sm:ml-6 sm:flex sm:items-center">
             <SignedOut>
               <SignInButton mode="modal">
@@ -145,14 +137,6 @@ const Navbar = () => {
               Track Health
             </Link>
             <Link
-              href="/community"
-              className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#3B82F6]"
-              style={{ fontFamily: "Roboto, sans-serif" }}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Community
-            </Link>
-            <Link
               href="/rewards"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#3B82F6]"
               style={{ fontFamily: "Roboto, sans-serif" }}
@@ -168,9 +152,16 @@ const Navbar = () => {
             >
               Profile
             </Link>
+            <Link
+              href="/clerk-auth"
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#3B82F6]"
+              style={{ fontFamily: "Roboto, sans-serif" }}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Clerk Auth
+            </Link>
 
             {/* Auth buttons - mobile */}
-
             <div className="mt-4 flex flex-col space-y-2 border-t border-gray-200 pt-4">
               <SignedOut>
                 <SignInButton mode="modal">
