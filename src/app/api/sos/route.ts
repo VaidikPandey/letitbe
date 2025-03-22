@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import twilio from "twilio";
-import { db } from "../../server/db";
-import { users } from "../../server/schema";
+//import { db } from "../../server/db";
+//import { users } from "../../server/schema";
 
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
