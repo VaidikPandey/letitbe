@@ -68,7 +68,7 @@ export default function HomePage() {
             backgroundImage: "url(/bg.png)",
             backgroundRepeat: "repeat-x",
             backgroundSize: "contain",
-            opacity: 0.1,
+            opacity: 0.5,
           }}
         ></div>
       </div>

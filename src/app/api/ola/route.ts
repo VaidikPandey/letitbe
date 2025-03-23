@@ -3,23 +3,18 @@ import axios from "axios";
 
 export async function POST(req: Request) {
   try {
-    const { latitude, longitude } = await req.json();
-
-    if (!latitude || !longitude) {
-      return NextResponse.json(
-        { error: "Latitude and Longitude are required." },
-        { status: 400 },
-      );
-    }
-
     // Replace with actual Ola Krutrim API URL & key
     const API_KEY = process.env.KRUTRIM_API_KEY; // Store in `.env.local`
-    const location = `${latitude}%2C${longitude}`;
-    const API_URL = `https://api.olamaps.io/places/v1/nearbysearch/advanced?location=${location}&types=doctor&radius=10000&withCentroid=false&rankBy=popular&api_key=${API_KEY}`;
 
-    const response = await axios.get(API_URL, {
-      headers: { Authorization: `Bearer ${API_KEY}` },
-    });
+    const API_URL = `https://api.olamaps.io/places/v1/nearbysearch/advanced?location=27.615566%2C77.588481&types=doctor&radius=10000&withCentroid=false&rankBy=popular`;
+
+    const response = await fetch(
+      "https://api.olamaps.io/places/v1/nearbysearch/advanced?location=27.615566%2C77.588481&types=doctor&radius=10000&withCentroid=false&rankBy=popular&api_key=CxU8IZxE29dZSlRkQFUxri71YRqeltTsZotfvRdy",
+      {
+        method: "POST",
+      },
+    );
+    console.log(response);
 
     const hospitals = response.data.predictions.map((hospital: any) => ({
       name: hospital.structured_formatting.main_text,

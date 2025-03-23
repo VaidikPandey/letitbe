@@ -9,14 +9,26 @@ async function fetchHospitals() {
   try {
     // Make a GET request to our Ola Krutrim API route
     const API_KEY = process.env.KRUTRIM_API_KEY; // Store in `.env.local`
-    const location = `${latitude}%2C${longitude}`;
-    const API_URL = `https://api.olamaps.io/places/v1/nearbysearch/advanced?location=${location}&types=doctor&radius=10000&withCentroid=false&rankBy=popular&api_key=${API_KEY}`;
+    const API_URL = "https://api.olamaps.io/places/v1/nearbysearch/advanced";
 
-    const response = await axios.get(API_URL, {
-      headers: { Authorization: `Bearer ${API_KEY}` },
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      body: JSON.stringify({
+        location: "27.615566,77.588481",
+        types: "doctor",
+        radius: 10000,
+        withCentroid: false,
+        rankBy: "popular",
+      }),
     });
 
-    const hospitals = response.data.predictions.map((hospital: any) => ({
+    console.log(response.status);
+    const data = await response.json();
+    const hospitals = data.predictions.map((hospital: any) => ({
       name: hospital.structured_formatting.main_text,
       address: hospital.structured_formatting.secondary_text,
       phone: hospital.formatted_phone_number || "N/A",
@@ -30,14 +42,14 @@ async function fetchHospitals() {
     // Fallback data in case of error
     return [
       {
-        name: "City Hospital (Fallback)",
-        address: "Main Road, Delhi",
-        phone: "1234567890",
+        name: "Aarogyam GLA University Mathura Up",
+        address: "Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+        phone: "+91 565 276 4462",
       },
       {
-        name: "Sunshine Clinic (Fallback)",
-        address: "Near Bus Stand, Mumbai",
-        phone: "9876543210",
+        name: "Sub Health Centre",
+        address: "Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+        phone: "+91 905 226 3102",
       },
     ];
   }
@@ -92,7 +104,7 @@ export async function POST(req: Request) {
         {
           role: "system",
           content:
-            "You are a helpful chatbot assisting users with health queries and general questions.",
+            "You are a helpful chatbot assisting users with health queries and general questions. you are nnot allowed to answer anything else ",
         },
         ...chatHistory,
       ],

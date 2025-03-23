@@ -1,0 +1,332 @@
+{
+  "predictions": [
+    {
+      "description": "Aarogyam GLA University Mathura Up, Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+      "matched_substrings": [],
+      "place_id": "ola-platform:5000049170476",
+      "reference": "5000049170476",
+      "structured_formatting": {
+        "main_text": "Aarogyam GLA University Mathura Up",
+        "main_text_matched_substrings": [],
+        "secondary_text": "Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+        "secondary_text_matched_substrings": []
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Aarogyam GLA University Mathura Up"
+        },
+        {
+          "offset": 36,
+          "value": "Chaumuha"
+        },
+        {
+          "offset": 46,
+          "value": "Chhata"
+        },
+        {
+          "offset": 24,
+          "value": "Mathura"
+        },
+        {
+          "offset": 63,
+          "value": "Uttar Pradesh"
+        },
+        {
+          "offset": 78,
+          "value": "281406"
+        },
+        {
+          "offset": 86,
+          "value": "India"
+        }
+      ],
+      "types": ["doctor", "health", "hospital"],
+      "layer": ["venue"],
+      "distance_meters": 908,
+      "business_status": "NA",
+      "url": "",
+      "formatted_phone_number": "",
+      "international_phone_number": "",
+      "website": "",
+      "photos": [],
+      "rating": 0,
+      "amenities_available": [],
+      "wheelchair_accessibility": false,
+      "parking_available": false,
+      "is_landmark": false,
+      "landmark_type": "",
+      "payment_mode": "",
+      "popular_items": [],
+      "language_spoken": "",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [],
+        "weekday_text": []
+      }
+    },
+    {
+      "description": "Sub Health Centre, Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+      "matched_substrings": [],
+      "place_id": "ola-platform:5000065549075",
+      "reference": "5000065549075",
+      "structured_formatting": {
+        "main_text": "Sub Health Centre",
+        "main_text_matched_substrings": [],
+        "secondary_text": "Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+        "secondary_text_matched_substrings": []
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Sub Health Centre"
+        },
+        {
+          "offset": 19,
+          "value": "Chaumuha"
+        },
+        {
+          "offset": 29,
+          "value": "Chhata"
+        },
+        {
+          "offset": 37,
+          "value": "Mathura"
+        },
+        {
+          "offset": 46,
+          "value": "Uttar Pradesh"
+        },
+        {
+          "offset": 61,
+          "value": "281406"
+        },
+        {
+          "offset": 69,
+          "value": "India"
+        }
+      ],
+      "types": ["doctor", "health", "hospital"],
+      "layer": ["venue"],
+      "distance_meters": 1090,
+      "business_status": "NA",
+      "url": "",
+      "formatted_phone_number": "",
+      "international_phone_number": "",
+      "website": "",
+      "photos": [],
+      "rating": 0,
+      "amenities_available": [],
+      "wheelchair_accessibility": false,
+      "parking_available": false,
+      "is_landmark": false,
+      "landmark_type": "",
+      "payment_mode": "",
+      "popular_items": [],
+      "language_spoken": "",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [],
+        "weekday_text": []
+      }
+    },
+    {
+      "description": "SC Chamuhan, Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+      "matched_substrings": [],
+      "place_id": "ola-platform:5000051596102",
+      "reference": "5000051596102",
+      "structured_formatting": {
+        "main_text": "SC Chamuhan",
+        "main_text_matched_substrings": [],
+        "secondary_text": "Chaumuha, Chhata, Mathura, Uttar Pradesh, 281406, India",
+        "secondary_text_matched_substrings": []
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "SC Chamuhan"
+        },
+        {
+          "offset": 13,
+          "value": "Chaumuha"
+        },
+        {
+          "offset": 23,
+          "value": "Chhata"
+        },
+        {
+          "offset": 31,
+          "value": "Mathura"
+        },
+        {
+          "offset": 40,
+          "value": "Uttar Pradesh"
+        },
+        {
+          "offset": 55,
+          "value": "281406"
+        },
+        {
+          "offset": 63,
+          "value": "India"
+        }
+      ],
+      "types": ["doctor", "health", "hospital"],
+      "layer": ["venue"],
+      "distance_meters": 1114,
+      "business_status": "NA",
+      "url": "",
+      "formatted_phone_number": "",
+      "international_phone_number": "",
+      "website": "",
+      "photos": [],
+      "rating": 0,
+      "amenities_available": [],
+      "wheelchair_accessibility": false,
+      "parking_available": false,
+      "is_landmark": false,
+      "landmark_type": "",
+      "payment_mode": "",
+      "popular_items": [],
+      "language_spoken": "",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [],
+        "weekday_text": []
+      }
+    },
+    {
+      "description": "Community Health Centre Choumunha, Govt Hospital Chaumuhan, Nh44, Chaumuha, Mathura, Uttar Pradesh, 281406, India",
+      "matched_substrings": [],
+      "place_id": "ola-platform:5000043559088",
+      "reference": "5000043559088",
+      "structured_formatting": {
+        "main_text": "Community Health Centre Choumunha",
+        "main_text_matched_substrings": [],
+        "secondary_text": "Govt Hospital Chaumuhan, Nh44, Chaumuha, Mathura, Uttar Pradesh, 281406, India",
+        "secondary_text_matched_substrings": []
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Community Health Centre Choumunha"
+        },
+        {
+          "offset": 35,
+          "value": "Govt Hospital Chaumuhan"
+        },
+        {
+          "offset": 60,
+          "value": "Nh44"
+        },
+        {
+          "offset": 49,
+          "value": "Chaumuha"
+        },
+        {
+          "offset": 76,
+          "value": "Mathura"
+        },
+        {
+          "offset": 85,
+          "value": "Uttar Pradesh"
+        },
+        {
+          "offset": 100,
+          "value": "281406"
+        },
+        {
+          "offset": 108,
+          "value": "India"
+        }
+      ],
+      "types": ["doctor", "health", "hospital"],
+      "layer": ["venue"],
+      "distance_meters": 1116,
+      "business_status": "NA",
+      "url": "",
+      "formatted_phone_number": "",
+      "international_phone_number": "",
+      "website": "",
+      "photos": [],
+      "rating": 0,
+      "amenities_available": [],
+      "wheelchair_accessibility": false,
+      "parking_available": false,
+      "is_landmark": false,
+      "landmark_type": "",
+      "payment_mode": "",
+      "popular_items": [],
+      "language_spoken": "",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [],
+        "weekday_text": []
+      }
+    },
+    {
+      "description": "GLA Dispensary, Chhata, Mathura, Uttar Pradesh, 281406, India",
+      "matched_substrings": [],
+      "place_id": "ola-platform:5000052662705",
+      "reference": "5000052662705",
+      "structured_formatting": {
+        "main_text": "GLA Dispensary",
+        "main_text_matched_substrings": [],
+        "secondary_text": "Chhata, Mathura, Uttar Pradesh, 281406, India",
+        "secondary_text_matched_substrings": []
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "GLA Dispensary"
+        },
+        {
+          "offset": 16,
+          "value": "Chhata"
+        },
+        {
+          "offset": 24,
+          "value": "Mathura"
+        },
+        {
+          "offset": 33,
+          "value": "Uttar Pradesh"
+        },
+        {
+          "offset": 48,
+          "value": "281406"
+        },
+        {
+          "offset": 56,
+          "value": "India"
+        }
+      ],
+      "types": ["doctor", "health", "hospital"],
+      "layer": ["venue"],
+      "distance_meters": 1153,
+      "business_status": "NA",
+      "url": "",
+      "formatted_phone_number": "",
+      "international_phone_number": "",
+      "website": "",
+      "photos": [],
+      "rating": 0,
+      "amenities_available": [],
+      "wheelchair_accessibility": false,
+      "parking_available": false,
+      "is_landmark": false,
+      "landmark_type": "",
+      "payment_mode": "",
+      "popular_items": [],
+      "language_spoken": "",
+      "opening_hours": {
+        "open_now": false,
+        "periods": [],
+        "weekday_text": []
+      }
+    }
+  ],
+  "info_messages": [],
+  "error_message": "",
+  "status": "ok"
+}
