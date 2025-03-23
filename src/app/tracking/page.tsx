@@ -29,9 +29,13 @@ export default function TrackingPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col gap-10 bg-gradient-to-b from-white to-[#f8f9fa] py-12">
+    <div className="flex min-h-screen flex-col gap-10 bg-gradient-to-b from-white to-[#f8f9fa] py-24">
       <Navbar />
       <div className="container top-[140px] mx-auto max-w-4xl px-4">
+        <h1 className="mb-[16px] text-center text-3xl font-bold text-[#3B82F6]">
+          Health Tracking
+        </h1>
+
         <div className="mb-8 overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-md">
           <h2 className="mb-6 border-b border-gray-200 pb-2 text-xl font-semibold text-gray-700">
             Current Health Metrics
