@@ -6,15 +6,41 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // Function to fetch hospitals (Replace this with Ola Krutrim API)
 async function fetchHospitals() {
-  // Mocked response - Replace with actual API call
-  return [
-    { name: "City Hospital", address: "Main Road, Delhi", phone: "1234567890" },
-    {
-      name: "Sunshine Clinic",
-      address: "Near Bus Stand, Mumbai",
-      phone: "9876543210",
-    },
-  ];
+  try {
+    // Make a GET request to our Ola Krutrim API route
+    const API_KEY = process.env.KRUTRIM_API_KEY; // Store in `.env.local`
+    const location = `${latitude}%2C${longitude}`;
+    const API_URL = `https://api.olamaps.io/places/v1/nearbysearch/advanced?location=${location}&types=doctor&radius=10000&withCentroid=false&rankBy=popular&api_key=${API_KEY}`;
+
+    const response = await axios.get(API_URL, {
+      headers: { Authorization: `Bearer ${API_KEY}` },
+    });
+
+    const hospitals = response.data.predictions.map((hospital: any) => ({
+      name: hospital.structured_formatting.main_text,
+      address: hospital.structured_formatting.secondary_text,
+      phone: hospital.formatted_phone_number || "N/A",
+    }));
+
+    // Parse the response from our Ola route
+
+    return hospitals || [];
+  } catch (error) {
+    console.error("Error fetching hospitals:", error);
+    // Fallback data in case of error
+    return [
+      {
+        name: "City Hospital (Fallback)",
+        address: "Main Road, Delhi",
+        phone: "1234567890",
+      },
+      {
+        name: "Sunshine Clinic (Fallback)",
+        address: "Near Bus Stand, Mumbai",
+        phone: "9876543210",
+      },
+    ];
+  }
 }
 
 // Store chat history in-memory (can use DB in production)
