@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 export default function TrackingPage() {
@@ -28,57 +29,54 @@ export default function TrackingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
-      <div className="container mx-auto max-w-4xl px-4">
-        <h1 className="mb-8 text-center text-3xl font-bold text-indigo-900">
-          Health Tracking
-        </h1>
-
-        <div className="mb-8 overflow-hidden rounded-xl bg-white p-6 shadow-lg">
-          <h2 className="mb-6 border-b border-gray-200 pb-2 text-xl font-semibold text-indigo-800">
+    <div className="flex min-h-screen flex-col gap-10 bg-gradient-to-b from-white to-[#f8f9fa] py-12">
+      <Navbar />
+      <div className="container top-[140px] mx-auto max-w-4xl px-4">
+        <div className="mb-8 overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-md">
+          <h2 className="mb-6 border-b border-gray-200 pb-2 text-xl font-semibold text-gray-700">
             Current Health Metrics
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Name</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Name</p>
               <p className="font-medium text-gray-800">
                 {userData.name || "Not set"}
               </p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Blood Pressure</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Blood Pressure</p>
               <p className="font-medium text-gray-800">
                 {userData.bloodPressureHigh}/{userData.bloodPressureLow} mmHg
               </p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Blood Sugar</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Blood Sugar</p>
               <p className="font-medium text-gray-800">
                 {userData.bloodSugar} mg/dL
               </p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Height</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Height</p>
               <p className="font-medium text-gray-800">{userData.height} cm</p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Weight</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Weight</p>
               <p className="font-medium text-gray-800">{userData.weight} kg</p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Emergency Contact</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Emergency Contact</p>
               <p className="font-medium text-gray-800">
                 {userData.emergency_number}
               </p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Date of Birth</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Date of Birth</p>
               <p className="font-medium text-gray-800">
                 {userData.dateOfBirth || "Not set"}
               </p>
             </div>
-            <div className="rounded-lg bg-indigo-50 p-4">
-              <p className="text-sm text-indigo-600">Oxygen Level</p>
+            <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 transition-all hover:shadow-sm">
+              <p className="text-sm text-gray-600">Oxygen Level</p>
               <p className="font-medium text-gray-800">
                 {userData.oxygenLevel}%
               </p>
@@ -88,9 +86,9 @@ export default function TrackingPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="overflow-hidden rounded-xl bg-white p-6 shadow-lg"
+          className="overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-md"
         >
-          <h2 className="mb-6 border-b border-gray-200 pb-2 text-xl font-semibold text-indigo-800">
+          <h2 className="mb-6 border-b border-gray-200 pb-2 text-xl font-semibold text-gray-700">
             Update Health Information
           </h2>
 
@@ -98,7 +96,7 @@ export default function TrackingPage() {
             <div>
               <label
                 htmlFor="name"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Name
               </label>
@@ -108,14 +106,14 @@ export default function TrackingPage() {
                 name="name"
                 value={userData.name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="dateOfBirth"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Date of Birth
               </label>
@@ -125,14 +123,14 @@ export default function TrackingPage() {
                 name="dateOfBirth"
                 value={userData.dateOfBirth}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="bloodPressureHigh"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Blood Pressure (Systolic)
               </label>
@@ -142,14 +140,14 @@ export default function TrackingPage() {
                 name="bloodPressureHigh"
                 value={userData.bloodPressureHigh}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="bloodPressureLow"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Blood Pressure (Diastolic)
               </label>
@@ -159,14 +157,14 @@ export default function TrackingPage() {
                 name="bloodPressureLow"
                 value={userData.bloodPressureLow}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="bloodSugar"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Blood Sugar (mg/dL)
               </label>
@@ -177,14 +175,14 @@ export default function TrackingPage() {
                 value={userData.bloodSugar}
                 onChange={handleChange}
                 step="0.1"
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="oxygenLevel"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Oxygen Level (%)
               </label>
@@ -196,14 +194,14 @@ export default function TrackingPage() {
                 onChange={handleChange}
                 min="0"
                 max="100"
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="height"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Height (cm)
               </label>
@@ -214,14 +212,14 @@ export default function TrackingPage() {
                 value={userData.height}
                 onChange={handleChange}
                 step="0.1"
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="weight"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Weight (kg)
               </label>
@@ -232,14 +230,14 @@ export default function TrackingPage() {
                 value={userData.weight}
                 onChange={handleChange}
                 step="0.1"
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
             <div>
               <label
                 htmlFor="emergency_number"
-                className="mb-1 block text-sm font-medium text-indigo-600"
+                className="mb-1 block text-sm font-medium text-gray-600"
               >
                 Emergency Contact Number
               </label>
@@ -249,7 +247,7 @@ export default function TrackingPage() {
                 name="emergency_number"
                 value={userData.emergency_number}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-gray-300 p-2 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-gray-300 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -257,7 +255,7 @@ export default function TrackingPage() {
           <div className="mt-8 flex justify-center">
             <button
               type="submit"
-              className="rounded-lg bg-indigo-600 px-8 py-3 text-white shadow-md transition-all hover:bg-indigo-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="rounded-lg bg-blue-600 px-8 py-3 text-white shadow-md transition-all hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Save Health Data
             </button>
