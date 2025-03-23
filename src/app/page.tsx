@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
@@ -54,9 +54,42 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#F9FAFB] pt-16 text-gray-800">
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#F9FAFB] pt-16 text-gray-800">
+      {/* Background marquee */}
+      <div
+        className="absolute hidden w-full overflow-hidden md:block"
+        style={{ height: "100%", top: 0, zIndex: 0 }}
+      >
+        <div
+          className="marquee-animation absolute"
+          style={{
+            width: "200%",
+            height: "200%",
+            backgroundImage: "url(/bg.png)",
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "contain",
+            opacity: 0.1,
+          }}
+        ></div>
+      </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .marquee-animation {
+          animation: marquee 60s linear infinite;
+        }
+      `}</style>
+
       <Navbar />
-      <div className="container flex max-w-2xl flex-col items-center justify-center gap-8 px-4 py-12">
+      <div className="container relative z-10 flex max-w-2xl flex-col items-center justify-center gap-8 px-4 py-12">
         <div className="mb-4">
           <h1
             className="text-center text-5xl font-bold text-[#3B82F6]"
@@ -105,31 +138,15 @@ export default function HomePage() {
 
                 {isLoading ? (
                   <div className="flex flex-col items-center justify-center py-6">
-                    <div className="mb-3 h-8 w-8 animate-spin rounded-full border-4 border-b-blue-500 border-l-transparent border-r-transparent border-t-blue-500"></div>
-                    <p className="font-medium text-blue-500">
-                      Processing your request...
+                    <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-t-2 border-blue-500"></div>
+                    <p className="mt-4 text-gray-600">
+                      Sending emergency alert...
                     </p>
-                  </div>
-                ) : responseMessage ? (
-                  <div
-                    className={`rounded-lg p-4 ${responseMessage.includes("successfully") ? "bg-green-50" : "bg-red-50"} mb-4`}
-                  >
-                    <p
-                      className={`text-center font-medium ${
-                        responseMessage.includes("successfully")
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {responseMessage}
-                    </p>
-                    <div className="mt-4 flex justify-center">
-                      <Dialog.Close asChild>
-                        <button className="rounded-full bg-gray-100 px-5 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-200">
-                          Close
-                        </button>
-                      </Dialog.Close>
-                    </div>
+                    {responseMessage && (
+                      <p className="mt-2 text-sm text-gray-500">
+                        {responseMessage}
+                      </p>
+                    )}
                   </div>
                 ) : (
                   <div className="flex flex-col gap-4">
@@ -141,7 +158,7 @@ export default function HomePage() {
                     </p>
 
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+8471073818"
                       className="flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-3 font-medium text-white transition-colors hover:bg-green-600"
                     >
                       <svg
@@ -218,7 +235,7 @@ export default function HomePage() {
 
           <Link
             className="flex flex-col rounded-lg border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
-            href="/ai-bot"
+            href="/chat"
             style={{ borderRadius: "12px" }}
           >
             <h3
